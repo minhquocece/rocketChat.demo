@@ -1,0 +1,11 @@
+<button (click)="login()">Login</button>
+<div></div>
+<input [(ngModel)]="channelName"><br/>
+<button (click)="createChanel()">Create channel</button>
+<div></div>
+<span *ngIf="duplicatedChannel">This channel already created</span><br/>
+<div></div>
+<div *ngFor="let channel of channels"><span (click)="loadChannelData(channel)">{{channel.name}}</span></div>
+<div style="margin-top: 20px;"></div>
+<!--<button (click)="loadChannelData()">Load channel Data</button>-->
+<app-channel *ngIf="createSuccess" [channelInfo]="channelInfo"></app-channel>
